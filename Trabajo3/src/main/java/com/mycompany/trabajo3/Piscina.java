@@ -19,11 +19,21 @@ public class Piscina {
     }
         
     public double getNivelActual() {
+        
         return nivelActual;
+        
     }
 
     public void setNivelActual(double nivelActual) {
+        
+        if(nivelActual > 1000){
+    
+            this.nivelActual = 1000;
+            
+        }
+        
         this.nivelActual = nivelActual;
+        
     }
     
     public void llenar(){
