@@ -12,9 +12,18 @@ import java.time.LocalDate;
  */
 public class Cuenta {
     
+    private String id;
     private double saldo;
     private double limite;
     private LocalDate fecha = LocalDate.now();    
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     
     public double getSaldo() {
         return saldo;
@@ -40,16 +49,34 @@ public class Cuenta {
         this.fecha = fecha;
     }
     
-    public Cuenta(){
+    public Cuenta(){}
     
+    public Cuenta(String id, double saldo, double limite){
+    
+        this.id = id; 
+        this.saldo = saldo;
+        this.limite = limite;
     
     }
     
-    public Cuenta(double saldo, double limite){
+    public void consignar(double valor){
     
-        this.saldo = saldo;
-        this.limite = limite;
+        this.saldo = this.saldo + valor; 
         
+    }
+    
+    public void retirar(double valor){
+    
+        if(valor > this.saldo){
+        
+            System.out.println("EL VALOR A RETIRAR ES MAYOR AL SALDO DE LA CUENTA");
+        
+        }else{
+        
+            this.saldo = this.saldo - valor;
+        
+        }
+    
     }
     
 }

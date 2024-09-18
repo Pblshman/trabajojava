@@ -13,6 +13,7 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String id;
+    
     private Cuenta cuenta;
 
     public String getNombre() {
@@ -54,6 +55,19 @@ public class Cliente {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cuenta = cuenta;
+        
+    }
+    
+    public void consignarALaCuenta(double valor){
+    
+        this.cuenta.consignar(valor);
+        System.out.println("El saldo de la cuenta es " + this.cuenta.getSaldo());
+        
+    }
+    
+    public double getSaldoCuenta(){
+    
+        return(this.cuenta.getSaldo());
         
     }
     
