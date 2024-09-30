@@ -10,8 +10,8 @@ package com.mycompany.ejercicioherencia;
  */
 public class Doctor extends Persona {
     
-    private String specialty;
-    private String hospital;
+    protected String specialty;
+    protected String hospital;
 
     public Doctor() {
     }
